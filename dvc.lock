@@ -8,8 +8,44 @@ stages:
       md5: f6cb2c1256ffe2836b36df321f46e92c
       size: 5834924
     outs:
-    - path: docs/figures/
+    - path: docs/figures/distribucion_education.png
       hash: md5
-      md5: 9ee2f9657e33efa9f5d0230482b1e60e.dir
-      size: 179267
-      nfiles: 6
+      md5: 9487638afeb737d503912ad518607a4b
+      size: 19525
+    - path: docs\figures\boxplots_age.png
+      hash: md5
+      md5: 97eef3e593c79251a54fe9b707762e86
+      size: 12675
+    - path: docs\figures\boxplots_tasa.png
+      hash: md5
+      md5: d78e4d62a43a9790309402b675bf80a6
+      size: 8381
+    - path: docs\figures\distribucion_job.png
+      hash: md5
+      md5: 3e18adeb4ca64df476ccca27461b292a
+      size: 22138
+    - path: docs\figures\distribucion_target.png
+      hash: md5
+      md5: 60af62f2360c92af922ab6c18f40c2ae
+      size: 21674
+    - path: docs\figures\matriz_correlacion.png
+      hash: md5
+      md5: 0696049720b38990b4fa20677de303ad
+      size: 94874
+  test_data_quality:
+    cmd: pytest --html=docs\test_results\test_results.html --self-contained-html
+      test\test_data_quality.py
+    deps:
+    - path: data\raw\bank-additional-full.csv
+      hash: md5
+      md5: f6cb2c1256ffe2836b36df321f46e92c
+      size: 5834924
+    - path: test\test_data_quality.py
+      hash: md5
+      md5: 860e6bed50a3f93abe0103268b4cad5f
+      size: 2826
+    outs:
+    - path: docs\test_results\test_results.html
+      hash: md5
+      md5: dbc320bd5b02126a2e3db3a7acf591d6
+      size: 33890
